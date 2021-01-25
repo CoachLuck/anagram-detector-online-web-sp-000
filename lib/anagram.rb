@@ -5,28 +5,10 @@ class Anagram
 
   def initialize(word)
     @word = word
-    @wordArr = word.split("").sort()
-    map = {}
-    wordArr.each {|letter|
-      map[letter] = 0 if !map[letter]
-      map[letter] += 1
-    }
-    @wordHash= map
   end
 
   def match(arr)
-  arr.map {|strs| strs.split("")}
-    .select{ |str|
-      hash = {}
-       str.all? { |ch|
-         if @wordHash.has_key?(ch)
-           hash[ch] = 0 if !hash[ch]
-           hash[ch] += 1
-           valid = @wordHash[ch] >= hash[ch]
-         end
-      }
-    }.map {|e| e.join("")}
-  end
+  arr.select {|x| x.split("").sort == @name.split("").sort}
 end
 
 diaper = Anagram.new('diaper')

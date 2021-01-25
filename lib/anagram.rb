@@ -9,7 +9,7 @@ class Anagram
 
   def match(arr)
   arr.select {|x| x.split("").sort == @name.split("").sort}
-end
+  end
 end
 
 diaper = Anagram.new('diaper')

@@ -10,6 +10,7 @@ class Anagram
   def match(arr)
   arr.select {|x| x.split("").sort == @name.split("").sort}
 end
+end
 
 diaper = Anagram.new('diaper')
 diaper.match(%w(hello world zombies pants dipper))
